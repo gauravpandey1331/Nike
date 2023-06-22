@@ -1,0 +1,580 @@
+html{
+   scroll-behavior: smooth;   /*for smooth scrolling down of a page*/
+}
+body{
+    font-family: 'Lato', sans-serif;   /*Lato font will be there*/
+    margin: 0;                       /*space from outside is 0*/
+    padding: 0;                    /*space from inside is 0*/
+}
+
+nav{
+    background-color: #111;  /* background color of navbar*/
+    color: white;            /* text color of navbar*/
+    padding: 20px 50px;         /* space in the navbar from inside with 20px as top-bottom and 50px as left-right*/ 
+}
+
+.navTop{                              
+     display: flex;
+     align-items: center;
+     justify-content: space-between;    /*To give the space between all the div present in a nav bar*/
+ }
+
+ .search{                     
+    display: flex;                /*Here the element is displayed in a same line*/ 
+    align-items: center;            /*All the element will be displayed in a center*/
+    background-color: gray;         /*Background for the search class will be gray*/
+    padding: 10px 20px;                /* space from inside is 10px from top-bottom and 20px from left-right*/
+    border-radius: 10px;               /*Border radius is used to make the corner round*/
+    cursor: pointer;                    /*Whenever we will take cursor on it it will act as a poniter*/
+ }
+
+ .searchInput{      
+    background-color: transparent;    /*To make background color as transparent of search box*/
+    border: none;                     /*To remove the border*/
+    cursor: pointer;                   /*Whenever we will take cursor on it it will act as a poniter*/
+ }
+
+ .searchInput::placeholder{         /* we have called placeholder */
+    color: lightgray;             /*we have changed the color of search present in a placeholder as lightgray*/
+ }
+
+ .limitedoffer{                    
+    font-size: 20px;                     /*font size is given as 20px*/
+    border-bottom: 2px solid green;         /*boreder bottom is given as 2px and solid with green color which can be seen*/
+    cursor: pointer;                  /*Whenever we will take cursor on it it will act as a poniter*/
+ }
+
+.navBottom{          
+   align-items: center;         /*to display all the item in a center*/
+   display: flex;               /*to display all the item in same line*/
+   justify-content: center;     /*to dispaly all the item at center and at a sameplace*/
+}
+     
+.menuItem{     
+   margin-right: 50px;          /*to give the space between the text from right*/
+   cursor: pointer;              /*Whenever we will take cursor on it it will act as a poniter*/
+   color: lightgray;           /*color of all the items present in a menuItem*/
+   font-weight: 400;             /*font weight is set upto 400*/
+}
+
+.slider{
+   background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);   /* have taken this style from 'css slip path maker'*/
+   overflow: hidden; /*With the hidden value, the overflow is clipped, and the rest of the content is hidden*/
+}
+
+.sliderWrapper{
+   display: flex;
+   width: 500vw;
+   transition: all 1.5s ease-in-out;  /*for moving all the slides within 1s*//*ease-in-out - specifies a transition effect with a slow start and end*/
+}
+
+.sliderItem{
+   width: 100vw;     
+   display: flex;
+   align-items: center;
+   justify-content: center;     /*to establish the content in the center*/
+   position: relative;          /*Relative - the element is positioned relative to its normal position. Absolute - the element is positioned absolutely to its first positioned parent. */
+}
+
+.slideBg{
+   width: 750px;
+   height: 750px;
+   border-radius: 50%;
+   position: absolute;
+   
+}
+
+.sliderImg{
+   z-index: 1;   /*to let the sliderImg be also displayed on the backgroundcolor of class 'slideBg'*/
+}
+
+.sliderTitle{
+   position: absolute;  /*determine the position of a document*/
+   top: 10%;            /*setting up the postion from top*/
+   right: 10%;           /*setting up the postion from right*/
+   font-size: 60px;
+   font-weight: 900;
+   text-align: center;
+   color: white;
+   z-index: 1;   /*to let the title be also displayed on the backgroundcolor of class 'slideBg'*/
+}
+
+.sliderPrice{
+   position: absolute;  /*determine the position of a document*/
+   top: 10%;            /*setting up the postion from top*/
+   left: 10%;           /*setting up the postion from right*/
+   font-size: 60px;
+   font-weight: 300;
+   text-align: center;
+   color: white;
+   border: 1px solid gray;
+   z-index: 1;   /*to let the title be also displayed on the backgroundcolor of class 'slideBg'*/
+}
+
+.buyButton{
+   position: absolute;  /*determine the position of a document*/
+   top: 50%;            /*setting up the postion from top*/
+   right: 10%;           /*setting up the postion from right*/
+   font-size: 30px;
+   font-weight: 900;     /*so that it could look like heavy*/
+   color: white;
+   background-color: black;
+   border: 1px solid gray;
+   cursor: pointer;
+   z-index: 1;           /*to let the BuyButton be also displayed on the backgroundcolor of class 'slideBg'*/
+}
+
+.buyButton:hover{    /*giving some hover effect to 'BUY NOW!' box when we move our cursor*/
+   background-color: white;
+   color: black;
+}
+
+.sliderItem:nth-child(1) .slideBg{  /*for setting up the color of class 'slideBg' which is in a class 'sliderItem' as many sliderItem are there, so we used n-th child proprty with value 1*/
+   background-color: #369e62;
+}
+
+.sliderItem:nth-child(2) .slideBg{  /*for setting up the color of class 'slideBg' which is in a class 'sliderItem' as many sliderItem are there, so we used n-th child proprty with value 1*/
+   background-color: rebeccapurple;
+}
+
+.sliderItem:nth-child(3) .slideBg{  /*for setting up the color of class 'slideBg' which is in a class 'sliderItem' as many sliderItem are there, so we used n-th child proprty with value 1*/
+   background-color: teal;
+}
+
+.sliderItem:nth-child(4) .slideBg{  /*for setting up the color of class 'slideBg' which is in a class 'sliderItem' as many sliderItem are there, so we used n-th child proprty with value 1*/
+   background-color: cornflowerblue;
+}
+
+.sliderItem:nth-child(5) .slideBg{  /*for setting up the color of class 'slideBg' which is in a class 'sliderItem' as many sliderItem are there, so we used n-th child proprty with value 1*/
+   background-color: rgb(124, 115, 80);
+}
+
+/*changing the color for 'sliderPrice'*/
+.sliderItem:nth-child(1) .sliderPrice{  
+   background-color: #369e62;
+}
+
+.sliderItem:nth-child(2) .sliderPrice{  
+   background-color: rebeccapurple;
+}
+
+.sliderItem:nth-child(3) .slidePrice{  
+   background-color: teal;
+}
+
+.sliderItem:nth-child(4) .slidePrice{  
+   background-color: cornflowerblue;
+}
+
+.sliderItem:nth-child(5) .slidePrice{  
+   background-color: rgb(124, 115, 80);
+}
+
+/*for features items*/
+ .features{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;         /*space is provided between the items*/
+   padding: 50px;        /*space given from inside with top-right-bottom-left as 50px*/
+ }
+
+ .feature{
+   display: flex;     /*to display in a same line*/
+   flex-direction: column;    /*we have choosed the direction of our flex and i.e horizontal (columm -wise)*/ 
+   text-align: center;         /*text is centered*/
+   align-items: center;        /*item is also centered*/
+ }
+
+ .featureIcon{     /*changing the size of a img present in a featureIcon class*/
+   width: 50px;
+   height: 50px;
+   cursor: pointer;
+ }
+
+ .freeTitle{     /*for adding some changes in a class named as 'freeTilte'*/
+   font-size: 20px;
+   font-weight: 600;
+   margin: 20px;
+ }
+
+ .featureDesc{   /*for adding some changes in a class named as 'freeDesc'*/
+   color: gray;
+   width: 50%;      /*for limiting its space for text in terms of width*/
+   height: 100px;     /*for limiting its space for text in terms of height*/
+ }
+
+ .product{    /* for making changes in a class 'product'*/ 
+   height: 100vh;
+   position: relative;  /*to let the item be placed in a own div*/
+   background-color: whitesmoke;
+   clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);/*we have given clip path which had made it of different structure*/
+ }
+
+ .productImg{  /*changing the size of class- 'productImg'*/
+   width: 50%;
+ }
+
+ .productDetails{  /*for changes in a productDetails*/
+   top: 10%;       /*setting up the position from top*/
+   position: absolute; /*to assign the details in a parent class i.e 'product'*/
+   width: 40%;         /*total width given for text for details*/
+   right: 0;     /*setting up the position from right i.e 0*/
+   padding: 50px;  /*for giving space between productTitle,productPrice & productDesc*/
+}
+
+.productTitle{    /*for making changes in a class-'productTitle'*/
+   font-size: 75px;
+   font-weight: 900;
+}
+
+.productDesc{    /*for making changes in a class-'productDesc'*/
+   font-style: 22px; /*font-style CSS property sets whether a font should be styled with a normal, italic, or oblique face from its font-family .*/
+   color: gray; 
+}
+
+.colors,      /*for displaying */
+.sizes{
+   display: flex;
+   margin-bottom: 20px;
+}
+
+.color{
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: black;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.color:last-child{   
+   background-color: darkblue;
+ }
+
+ .size{  /*for adding change into size option*/
+   padding: 5px 20px;
+   border: 1px solid black;
+   font-size: 20px;
+   cursor: pointer;
+   margin-right: 10px;
+ }
+
+ .size:hover{ /*for adding hover effect i.e when we point cursor on it, its color get changes*/
+   background-color: black;
+   color: white;
+   transition: 0.3s ease-out;
+ }
+
+ .productButton{   /*giving style to productButton*/ 
+   float: right;    /*to set up it into right*/
+   padding: 10px 20px;   /*for setting up the position from inside*/
+   background-color: black;
+   color: white;
+   cursor: pointer;
+   font-weight: 600;
+ }
+
+ .productButton:hover{    /*to change the color when we click on it*/
+   background-color: white;  
+   color: black;
+ }
+
+ .payment{
+   width: 500px;
+   height: 500px;
+   background-color: white;
+   position: absolute;   /*to let the payment appears on the parent class we used absolute*/
+   top: 0;      /*for changing the position from top of payment class*/
+   bottom: 0;     /*for changing the position from top of payment class*/
+   left: 0;        /*for changing the position from top of payment class*/
+   right: 0;        /*for changing the position from top of payment class*/
+   margin: auto;     /*changing postion from outside, we use margin and  auto to make it at center of a payment class*/
+   display: none;
+   flex-direction: column;
+   padding: 10px 50px;
+   -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);  /*from Box shadow css generator*/ 
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);           /*from Box shadow css generator*/ 
+ }
+ 
+ .payTitle{
+   font-size: 20px;
+   color: darkgrey;
+ }
+ 
+ label{
+   font-size: 14px;
+   font-weight: 300;
+ }
+ 
+ .payInput{
+   padding: 10px;
+   margin: 10px 0px;
+   border: none;  /*to let the border seems like invisible*/
+   border-bottom: 1px solid gray;   /*border will be given in a bottom with gray color*/
+ 
+ }
+ 
+ .cardIcons{           
+   display: flex;
+ }
+ 
+ .cardIcon{
+   margin-right: 10px;
+ }
+ 
+ .cardInfo{
+   display: flex;
+   justify-content: space-between;
+ }
+ 
+ .sm{
+   width: 25%;
+ }
+ 
+ .payButton {
+   position: relative;
+   height: 50px;
+   bottom: -40;
+   width: 100%;
+   left: 0;
+   -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+   box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+   background-color: #369e62;
+   color: white;
+   cursor: pointer;
+ }
+
+ .close{   /*for payment style*/ 
+   background-color: gray;
+   color: white;
+   display: flex;
+   top: 10px;
+   right: 10px;
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   padding: 2px;
+ }
+
+ /*For gallery images*/
+
+ .gallery{
+   padding: 50px;
+   display: flex;
+ }
+
+.galleryItem{
+   width: 33.3%;
+   padding: 50px;
+}
+
+ .galleryImg{
+   width: 100%;
+ }
+
+ /*For New Season Product*/
+ .newSeason{
+   display: flex;
+ }
+
+ .nsItem{
+   width: 33.3%;
+   background-color: black;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+ }
+
+ .nsImg{
+   width: 100%;
+   height: 500px;
+ }
+
+ .nsTitle{
+   font-size: 40px;
+ } 
+
+ .nsButton{
+   padding: 15px;
+   font-weight: 600;
+   cursor: pointer;
+ }
+
+/*footer section*/
+
+footer{
+   display: flex;
+}
+
+.footerLeft{
+   flex: 2;
+   display: flex;
+   justify-content: space-between;
+   padding: 50px;
+}
+
+.fMenuTitle{
+ font-size: 16px;   
+}
+
+.fList{
+   padding: 0;
+   list-style: none; /*to remove the '*' from the listItem*/
+}
+
+.fListItem{
+    margin-bottom: 10px;
+    color: gray;
+    cursor: pointer;
+}
+
+.footerRight{
+   flex: 1;
+   padding: 50px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.fInput{
+   padding: 5px;
+}
+
+.fButton{
+   padding: 5px;
+   background-color: black;
+   color: white;
+}
+
+.fIcons{
+   display: flex;
+}
+
+.fIcon{
+   width: 20px;
+   height: 20px;
+   margin-right: 10px;
+}
+
+.copyright{
+   font-weight: 300;
+   font-size: 14px;
+}
+
+/*for making website responsive in other tab we use*/
+@media screen and (max-width:480px) { /*this below feature will work if our tab screen will be less or equal to 480px atleast*/
+   nav{
+      padding: 20px;
+   }
+  
+   .search{
+      display: none;
+   }
+   
+   .navBottom{
+      flex-wrap: wrap;  /*Incase of overflow it dispklay the text into the other line and stop overflowing.*/
+   }
+  
+   .menuItem{
+      margin: 20px;
+      font-weight: 700;
+      font-size: 20px;
+   }
+
+   .slider{
+      clip-path: none;  /*The clip-path CSS property creates a clipping region that sets what part of an element should be shown*/
+   }
+
+   .sliderImg{
+      width: 90%;
+   }
+
+   .sliderBg{
+      width: 100%;
+      height: 100%;
+   }
+
+   .sliderTitle{
+      display: none;
+   }
+
+   .sliderPrice{
+      top: unset;
+      bottom: 0;
+      left: 0;
+      background-color: grey;
+   }
+
+   .buyButton{
+       right: 0;
+       top: 0;
+   } 
+
+   .features{
+      flex-direction: column;
+   }
+
+   .product{
+      clip-path: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .productImg{
+      width: 80%;
+   }
+
+   .productDetails{
+      width: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      top: 0;
+   }
+
+   .productTitle{
+      font-size: 50px;
+       margin: 0;
+   }
+
+   .gallery{
+      display: none;
+   }
+
+   .nsItem:nth-child(2){
+     padding: 30px;
+   }
+
+   footer{
+      flex-direction: column;
+      align-items: center;
+   }
+   
+   .footerLeft{
+      padding: 20px;
+      width: 90%;
+   }
+
+   .footerRight{
+      padding: 20px;
+      width: 90%;
+      align-items: center;
+      background-color: whitesmoke;
+   }
+
+   .payment{
+      width: 90%;
+      padding: 20px;
+   }
+
+}
